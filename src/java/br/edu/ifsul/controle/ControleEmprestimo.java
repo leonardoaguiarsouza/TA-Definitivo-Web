@@ -66,6 +66,7 @@ public class ControleEmprestimo implements Serializable {
         objeto = dao.localizar(id);
         if (dao.remover(objeto)) {
             Util.mensagemInformacao(dao.getMensagem());
+            dao.refresh();
         } else {
             Util.mensagemErro(dao.getMensagem());
         }
